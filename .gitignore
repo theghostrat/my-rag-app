@@ -1,0 +1,5 @@
+# Ignore the Chroma DB directory
+chroma_db/
+
+# Ignore the uploads directory
+uploads/

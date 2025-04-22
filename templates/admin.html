@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin - RAG SaaS</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <style>
+        /* Specific styles for the admin page */
+        body {
+            background-color: #f8f9fa; /* Consistent background */
+            font-family: 'Roboto', sans-serif;
+            color: #333;
+        }
+
+        .container {
+            max-width: 800px; /* Limit container width */
+            margin: 20px auto; /* Center with margin */
+            padding: 20px;
+            background-color: #ffffff; /* White background */
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Stronger shadow */
+            box-sizing: border-box;
+        }
+
+        h1 {
+            text-align: center;
+            color: #343a40; /* Consistent heading color */
+            margin-top: 0;
+            margin-bottom: 20px;
+            font-size: 2em;
+        }
+
+        .upload-area {
+            background-color: #f8f9fa; /* Light grey background */
+            padding: 25px; /* More padding */
+            border-radius: 8px;
+            border: 1px dashed #ced4da; /* Dashed border */
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .upload-area h2 {
+            margin-top: 0;
+            color: #555;
+            font-size: 1.3em;
+            margin-bottom: 15px;
+        }
+
+        .upload-area input[type="file"] {
+            display: block; /* Make input a block element */
+            margin: 0 auto 15px auto; /* Center and add margin below */
+            padding: 10px;
+            border: 1px solid #ced4da;
+            border-radius: 4px;
+            background-color: #ffffff;
+        }
+
+        .upload-area button {
+            padding: 10px 20px;
+            background-color: #007bff; /* Primary button color */
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            font-size: 1em;
+        }
+
+        .upload-area button:hover {
+            background-color: #0056b3; /* Darker blue on hover */
+        }
+
+        #uploadStatus {
+            margin-top: 15px; /* More space above status */
+            font-size: 1em;
+            color: #007bff;
+            font-weight: bold;
+        }
+
+        .document-list-area {
+            background-color: #f8f9fa; /* Light grey background */
+            padding: 25px; /* More padding */
+            border-radius: 8px;
+            border: 1px solid #ced4da; /* Solid border */
+        }
+
+        .document-list-area h2 {
+            margin-top: 0;
+            color: #555;
+            font-size: 1.3em;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+
+        #documentList {
+            list-style: none;
+            padding: 0;
+        }
+
+        #documentList li {
+            background-color: #ffffff;
+            border: 1px solid #e9ecef;
+            border-radius: 4px;
+            padding: 10px 15px;
+            margin-bottom: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+        }
+
+        #documentList li span {
+            flex-grow: 1;
+            margin-right: 10px;
+            word-break: break-all; /* Break long filenames */
+        }
+
+        #documentList li button {
+            padding: 5px 10px;
+            background-color: #dc3545; /* Red color for delete */
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            font-size: 0.9em;
+        }
+
+        #documentList li button:hover {
+            background-color: #c82333; /* Darker red on hover */
+        }
+
+        /* Add styles for future admin features here */
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Admin Panel</h1>
+        <div class="upload-area">
+            <h2>Upload Documents for RAG (.pdf, .docx)</h2>
+            <input type="file" id="documentUpload" multiple accept=".pdf,.docx">
+            <button onclick="uploadDocuments()">Upload</button>
+            <div id="uploadStatus" style="margin-top: 10px;"></div>
+        </div>
+        <div class="document-list-area">
+            <h2>Uploaded Documents</h2>
+            <ul id="documentList">
+                <!-- Document list will be populated by JavaScript -->
+            </ul>
+        </div>
+        <!-- Future admin features can be added here -->
+    </div>
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>

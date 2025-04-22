@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RAG SaaS - Home</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <style>
+        /* Specific styles for the landing page */
+        body {
+            background-color: #f8f9fa; /* Lighter background */
+        }
+
+        .container {
+            padding: 0; /* Remove container padding for full-width sections */
+            max-width: none; /* Allow sections to be full width */
+        }
+
+        header {
+            background-color: #ffffff;
+            padding: 15px 20px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+            text-align: center;
+        }
+
+        header h1 {
+            color: #343a40;
+            margin: 0;
+            font-size: 1.8em;
+        }
+
+        .hero-section {
+            text-align: center;
+            padding: 100px 20px;
+            background: linear-gradient(to right, #007bff, #0056b3); /* Gradient background */
+            color: white;
+            margin-bottom: 0; /* Remove margin-bottom */
+            border-radius: 0; /* Remove border-radius */
+        }
+
+        .hero-section h2 {
+            color: white; /* White color for heading */
+            margin-bottom: 20px;
+            font-size: 2.5em;
+            font-weight: 700;
+        }
+
+        .hero-section p {
+            color: rgba(255, 255, 255, 0.9); /* Slightly transparent white */
+            font-size: 1.2em;
+            margin-bottom: 40px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cta-buttons a {
+            display: inline-block;
+            padding: 12px 25px;
+            margin: 0 10px;
+            border-radius: 5px; /* Slightly more rounded */
+            text-decoration: none;
+            font-weight: bold;
+            transition: background-color 0.3s ease, border-color 0.3s ease;
+            font-size: 1.1em;
+        }
+
+        .cta-buttons .btn-primary {
+            background-color: #ffffff;
+            color: #007bff;
+            border: 2px solid #ffffff;
+        }
+
+        .cta-buttons .btn-primary:hover {
+            background-color: #e9ecef;
+            border-color: #e2e6ea;
+        }
+
+        .cta-buttons .btn-secondary {
+            background-color: transparent;
+            color: white;
+            border: 2px solid white;
+        }
+
+        .cta-buttons .btn-secondary:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+            border-color: rgba(255, 255, 255, 0.3);
+        }
+
+        .features-section {
+            padding: 60px 20px; /* More padding */
+            text-align: center;
+            background-color: #ffffff; /* White background */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.05); /* Subtle shadow */
+        }
+
+        .features-section h2 {
+            color: #343a40; /* Darker heading color */
+            margin-bottom: 40px;
+            font-size: 2em;
+            font-weight: 700;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Slightly wider minmax */
+            gap: 30px; /* More gap */
+            max-width: 960px; /* Max width for grid */
+            margin: 0 auto; /* Center the grid */
+        }
+
+        .feature-item {
+            background-color: #f8f9fa; /* Light grey background */
+            padding: 30px; /* More padding */
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08); /* Slightly stronger shadow */
+            text-align: center; /* Center feature item content */
+            transition: transform 0.3s ease; /* Add hover effect */
+        }
+
+        .feature-item:hover {
+            transform: translateY(-5px); /* Lift on hover */
+        }
+
+        .feature-item h3 {
+            color: #007bff; /* Blue heading color */
+            margin-top: 0;
+            margin-bottom: 15px;
+            font-size: 1.3em;
+        }
+
+        .feature-item p {
+            color: #6c757d; /* Grey text color */
+            font-size: 1em;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            margin-top: 30px; /* Add margin top */
+            color: #6c757d;
+            font-size: 0.9em;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>RAG SaaS</h1>
+        </header>
+
+        <section class="hero-section">
+            <h2>Unlock the Power of Your Documents with AI</h2>
+            <p>Our SaaS platform allows you to chat with your documents using advanced RAG technology and select from various language models.</p>
+            <div class="cta-buttons">
+                <a href="{{ url_for('signup') }}" class="btn-primary">Get Started</a>
+                <a href="{{ url_for('login') }}" class="btn-secondary">Login</a>
+            </div>
+        </section>
+
+        <section class="features-section">
+            <h2>Key Features</h2>
+            <div class="features-grid">
+                <div class="feature-item">
+                    <h3>Document Upload</h3>
+                    <p>Securely upload your PDF and DOCX documents for processing.</p>
+                </div>
+                <div class="feature-item">
+                    <h3>AI Chat Interface</h3>
+                    <p>Interact with your documents using a natural language chat interface.</p>
+                </div>
+                <div class="feature-item">
+                    <h3>Model Selection</h3>
+                    <p>Choose from a variety of powerful language models for your chat.</p>
+                </div>
+                 <div class="feature-item">
+                    <h3>Admin Panel</h3>
+                    <p>Admins can manage uploaded documents and user access.</p>
+                </div>
+            </div>
+        </section>
+
+        <footer>
+            <p>&copy; 2025 RAG SaaS. All rights reserved.</p>
+        </footer>
+    </div>
+</body>
+</html>
