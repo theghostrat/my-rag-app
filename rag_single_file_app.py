@@ -12,7 +12,7 @@ from functools import wraps
 
 # Load environment variables
 load_dotenv()
-OPENROUTER_API_KEY = "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"
+OPENROUTER_API_KEY = ""
 if not OPENROUTER_API_KEY:
     print("Error: OPENROUTER_API_KEY not found in .env file.")
     # In a real app, you might want to exit or handle this more gracefully
